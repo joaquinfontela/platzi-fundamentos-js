@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Extras 3</title>
+  </head>
+  <body>
+  </body>
+  <script>
+    const joaquin = {
+      nombre: 'Joaquin',
+      apellido: 'Fontela',
+      edad: 20,
+      nacionalidad: 'ARG'
+    }
+
+    const cumpleanos = persona => persona.edad++
+    // Esta funcion modificara al objeto en cuestion, y nosotros, por cuestion de seguridad, podemos no querer que pase eso.
+
+    const cumpleanosInmutable = persona => ({ // Devuelve lo de adentro.
+      ...persona, // Desglosamos al objeto persona: agarramos sus atributos, y los ponemos en este nuevo objeto persona,
+                  // permaneciendo el original intacto.
+      edad: persona.edad + 1 // Aumentamos la edad en uno respecto a la persona original.
+    })
+    //Este ultimo metodo devuelve un nuevo objeto con un ano mas, sin modificar el anterior.
+
+  </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase 1 de Fundamentos</title>
+  </head>
+  <body>
+  </body>
+  <script>
+    function crearSaludo(finalDeFrase) { // Los closures son funciones que retornan otra funcion, recordando los parametros recibidos.
+      return function (nombre) {
+        console.log(`Hola ${nombre}, ${finalDeFrase}!`)
+      }
+    }
+
+    const saludoArgentino = crearSaludo('che')
+    // Guarda en la constante saludoArgentino, la funcion que retorna crearSaludo, con el valor 'finalDeFrase' ya determinado.
+    const saludoMexicano = crearSaludo('guey')
+    const saludoColombiano = crearSaludo('pana')
+
+    //Entonces:
+
+    saludoArgentino('Joaquin')
+    // Estoy llamando a la funcion que retorna crearSaludo(), con el nombre 'Joaquin'.
+    saludoMexicano('Joaquin')
+    saludoColombiano('Joaquin')
+
+  </script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Clase 1 de Fundamentos</title>
+  </head>
+  <body>
+  </body>
+  <script>
+    function factorial(n) {
+      // La funcion recibe un numero natural n y devuelve su factorial.
+
+      if (!this.cache){ // Dentro de una funcion, "this" hace referencia a la propia funcion.
+        this.cache = {} // Si no esta creado el cache, lo creamos en forma de array.
+      }
+
+      if (this.cache [n]){ // Si hay algo guardado dentro de la posicion n de la cache.
+        return this.cache [n] // Devolvelo (es el valor del factorial).
+      }
+
+      // Si el resultado no estaba en la cache, calculamos el factorial de la forma que ya sabiamos.
+
+      if (n === 1) {
+        return 1
+      }
+
+      this.cache [n] = n * factorial(n - 1) // Y guardamos el resultado en la cache.
+
+      return this.cache [n]
+
+
+    }
+  </script>
+</html>

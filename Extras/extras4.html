@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Extras 4</title>
+  </head>
+  <body>
+  </body>
+  <script>
+    const joaquin = {
+      nombre: 'Joaquin',
+      apellido: 'Fontela',
+      edad: 20,
+      nacionalidad: 'ARG'
+    }
+
+    const lucho = {
+      nombre: 'Luis',
+      apellido: 'Guibert',
+      edad: 88,
+      nacionalidad: 'ARG'
+    }
+
+    function saludar(saludo = 'Hola') { // El igual define el valor por defecto del parametro.
+      console.log(`${saludo}, mi nombre es ${this.nombre}.`) // Si usamos la funcion asi, 'this' (el contexto) sera 'window'.
+    }
+
+    const saludarJoaquin = saludar.bind(joaquin, 'Buenos dias') // El primer parametro sera el 'this' (contexto), el segundo
+                                                                 // es el primer parametro de saludar().
+
+    saludarJoaquin() // bind no ejecuta la funcion, asi que esa es la tarea de esto.
+
+    saludar.call(lucho, 'Que tal') // Ejecuta la funcion automaticamente.
+
+    saludar.apply(lucho, ['Buenos dias']) // Ejecuta la funcion automaticamente, pero los parametros adicionales se agrupan en un array.
+
+  </script>
+</html>
